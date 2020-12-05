@@ -1,5 +1,6 @@
 package com.security.demo.service.impl;
 
+import com.security.demo.entity.User;
 import com.security.demo.mapper.UserMapper;
 import com.security.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userMapper.getUser(username);
+        User user = userMapper.getUser(username);
+        if(user == null){
+            throw new UsernameNotFoundException("非法用户！！！");
+        }
+        return user;
     }
 }
