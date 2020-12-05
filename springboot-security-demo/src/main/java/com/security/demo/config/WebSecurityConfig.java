@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -32,14 +33,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .roles("USER");
         .userDetailsService(userServiceImpl).passwordEncoder(bCryptPasswordEncoder());
     }
-
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+                .addResourceHandler("/resources/**")
+                .addResourceLocations("/resources/")
+                .setCachePeriod(31556926);
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
         http.authorizeRequests()
-                .antMatchers("/login.html", "/css/**")
-//
+                .antMatchers( "/css/**")
                    .permitAll()
 //                .regexMatchers("[a-zA-Z\\-\\.]css","*.js")
 //                    .permitAll()
