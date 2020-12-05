@@ -33,12 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .roles("USER");
         .userDetailsService(userServiceImpl).passwordEncoder(bCryptPasswordEncoder());
     }
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/")
-                .setCachePeriod(31556926);
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
