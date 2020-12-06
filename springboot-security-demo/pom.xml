@@ -11,5 +11,11 @@
 
     <artifactId>springboot-security-demo</artifactId>
 
-
+   <dependencies>
+       <dependency>
+           <groupId>org.example</groupId>
+           <artifactId>security-commons</artifactId>
+           <version>1.0-SNAPSHOT</version>
+       </dependency>
+   </dependencies>
 </project>
