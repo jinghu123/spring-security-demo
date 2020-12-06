@@ -19,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userServiceImpl;
+
     @Autowired
     private RsaKeyConfig rsaKeyConfig;
 

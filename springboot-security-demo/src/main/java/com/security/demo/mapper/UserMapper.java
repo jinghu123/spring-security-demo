@@ -14,5 +14,5 @@ public interface UserMapper {
                     many = @Many(select = "com.security.demo.mapper.RoleMapper.getRolesByUserId")
             )
     })
-    public User getUser(@Param("username") String username);
+    User getUser(@Param("username") String username);
 }

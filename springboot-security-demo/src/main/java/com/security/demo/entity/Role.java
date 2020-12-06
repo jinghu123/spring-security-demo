@@ -3,7 +3,9 @@ package com.security.demo.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 
-public class Role implements GrantedAuthority {
+import java.io.Serializable;
+
+public class Role implements GrantedAuthority, Serializable {
 
     private String id;
     private String roleName;

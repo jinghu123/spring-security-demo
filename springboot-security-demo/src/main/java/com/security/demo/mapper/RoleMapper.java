@@ -10,5 +10,5 @@ import java.util.List;
 public interface RoleMapper {
 
     @Select("select role_name as roleName,role_desc as roleDesc from role,role_to_user where role.id = role_to_user.role_id and user_id = #{userId}")
-    public List<Role> getRolesByUserId(String userId);
+    List<Role> getRolesByUserId(String userId);
 }
