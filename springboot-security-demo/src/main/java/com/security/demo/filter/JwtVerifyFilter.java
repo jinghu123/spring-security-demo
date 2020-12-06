@@ -24,7 +24,7 @@ import java.util.Map;
  */
 public class JwtVerifyFilter extends BasicAuthenticationFilter {
 
-    private RsaKeyConfig rsaKeyConfig;
+    private final RsaKeyConfig rsaKeyConfig;
     public JwtVerifyFilter(AuthenticationManager authenticationManager,RsaKeyConfig rsaKeyConfig) {
         super(authenticationManager);
         this.rsaKeyConfig = rsaKeyConfig;

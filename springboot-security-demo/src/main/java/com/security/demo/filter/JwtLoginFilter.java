@@ -27,8 +27,8 @@ import java.util.Map;
  */
 public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 
-    private AuthenticationManager authenticationManager;
-    private RsaKeyConfig rsaKeyConfig;
+    private final AuthenticationManager authenticationManager;
+    private final RsaKeyConfig rsaKeyConfig;
 
     public JwtLoginFilter(AuthenticationManager authenticationManager, RsaKeyConfig rsaKeyConfig) {
         this.authenticationManager = authenticationManager;
