@@ -6,8 +6,8 @@ import java.security.PublicKey;
 import static org.junit.Assert.*;
 
 public class RsaUtilsTest {
-    private String privateFilePath = "D:\\auth_key\\id_key_rsa";
-    private String publicFilePath = "D:\\auth_key\\id_key_rsa.pub";
+    private final String privateFilePath = "D:\\auth_key\\id_key_rsa";
+    private final String publicFilePath = "D:\\auth_key\\id_key_rsa.pub";
 
     @org.junit.Test
     public void getPublicKey() throws Exception {
